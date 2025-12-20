@@ -34,7 +34,7 @@ export default function Navbar() {
             </>
           ) : (
             <>
-              <Link to="/login" className="hover:text-white">
+              <Link to="/login" className="hover:text-white mt-1 text-xl ">
                 Login
               </Link>
               <Link

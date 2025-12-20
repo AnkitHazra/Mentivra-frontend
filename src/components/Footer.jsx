@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="relative mt-24 border-t border-white/10 bg-black/40 backdrop-blur-md">
+    <footer className="relative  border-t border-white/10 bg-black/40 backdrop-blur-md">
       {/* subtle glow */}
       <div className="absolute inset-0 bg-gradient-to-t from-indigo-900/10 to-transparent pointer-events-none" />
 
