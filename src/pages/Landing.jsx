@@ -30,7 +30,7 @@ export default function Landing() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-start pt-32 relative overflow-hidden bg-[#020617]">
+    <div className="min-h-screen flex flex-col items-center justify-start pt-32 relative overflow-hidden bg-[#03081e]">
 
       {/* Background Gradient Layer */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#020617] via-[#020617] to-indigo-900/30 pointer-events-none" />
