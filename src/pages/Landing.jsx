@@ -1,33 +1,34 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import ContactForm from "../components/ContactForm";
 
 export default function Landing() {
 
   const [openFAQ, setOpenFAQ] = useState(null);
-  
-    const toggleFAQ = (index) => {
-      setOpenFAQ(openFAQ === index ? null : index);
-    };
-  
-    const FAQs = [
-      {
-        q: "Is Mentivra free to use?",
-        a: "Yes. Our platform is currently free during early access development.",
-      },
-      {
-        q: "Do you provide chapter-wise PYQs?",
-        a: "Yes. Each subject is organized chapter-wise, topic-wise, and year-wise.",
-      },
-      {
-        q: "Are answer keys available?",
-        a: "Correct answers are available and detailed solutions are being added.",
-      },
-      {
-        q: "Is this made by real JEE/NEET aspirants?",
-        a: "The platform is shaped by people who cleared national exams.",
-      },
-    ];
-    
+
+  const toggleFAQ = (index) => {
+    setOpenFAQ(openFAQ === index ? null : index);
+  };
+
+  const FAQs = [
+    {
+      q: "Is Mentivra free to use?",
+      a: "Yes. Our platform is currently free during early access development.",
+    },
+    {
+      q: "Do you provide chapter-wise PYQs?",
+      a: "Yes. Each subject is organized chapter-wise, topic-wise, and year-wise.",
+    },
+    {
+      q: "Are answer keys available?",
+      a: "Correct answers are available and detailed solutions are being added.",
+    },
+    {
+      q: "Is this made by real JEE/NEET aspirants?",
+      a: "The platform is shaped by people who cleared national exams.",
+    },
+  ];
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-start pt-32 relative overflow-hidden bg-[#020617]">
 
@@ -39,7 +40,7 @@ export default function Landing() {
       <div className="absolute -bottom-40 -right-40 w-[500px] h-[500px] bg-teal-500/10 rounded-full blur-3xl" />
 
       {/* HERO SECTION */}
-      <div   className="relative z-10 max-w-4xl px-6 text-center">
+      <div className="relative z-10 max-w-4xl px-6 text-center">
 
         <h1 data-aos="fade-up" className="text-4xl md:text-6xl font-semibold text-white leading-tight mb-6">
           Learn With Clarity
@@ -48,14 +49,14 @@ export default function Landing() {
           </span>
         </h1>
 
-        <p   data-aos="fade-up"
-  data-aos-delay="150" className="text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed text-lg md:text-xl">
+        <p data-aos="fade-up"
+          data-aos-delay="150" className="text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed text-lg md:text-xl">
           Practice previous year questions chapter-wise with clarity and focus.
           Designed for serious aspirants and trusted by parents.
         </p>
 
         <div data-aos="fade-up"
-  data-aos-delay="300" className="flex justify-center gap-4">
+          data-aos-delay="300" className="flex justify-center gap-4">
           <Link
             to="/signup"
             className="px-6 py-3 rounded-md bg-indigo-600 hover:bg-indigo-500 text-white transition text-lg"
@@ -73,7 +74,7 @@ export default function Landing() {
       </div>
 
       {/* PRODUCT DESCRIPTION & CREDIBILITY CARD */}
-      <div  data-aos="zoom-in" className="relative z-10 w-full mt-32 px-6 ">
+      <div data-aos="zoom-in" className="relative z-10 w-full mt-32 px-6 ">
         <div className="max-w-5xl mx-auto bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-10 shadow-lg">
 
           <h2 className="text-3xl md:text-4xl font-semibold text-white text-center mb-6">
@@ -166,9 +167,9 @@ export default function Landing() {
 
           {["Physics", "Chemistry", "Mathematics", "Biology"].map((sub, i) => (
             <div
-              key={i} 
+              key={i}
               data-aos="fade-up"
-  data-aos-delay={i * 100}
+              data-aos-delay={i * 100}
               className="
                 bg-white/5 backdrop-blur-xl border border-white/10 
                 rounded-xl p-6 text-center transition 
@@ -187,7 +188,7 @@ export default function Landing() {
 
         </div>
       </div>
-      
+
       {/* FAQ SECTION */}
       <div data-aos="fade-up" className="relative z-10 w-full mt-32 px-6 pb-32">
         <h2 className="text-4xl font-bold text-center text-white mb-12">
@@ -225,10 +226,18 @@ export default function Landing() {
 
         </div>
       </div>
-          
+      {/* CONTACT SECTION */}
+      <div className="relative z-10 w-full mt-32 px-6 pb-32">
+        <h2 className="text-4xl font-bold text-center text-white mb-12">
+          Contact Us
+        </h2>
+
+        <ContactForm />
+      </div>
+
       {/* Bottom Spacer */}
       <div className="h-32" />
-      
+
 
     </div>
   );

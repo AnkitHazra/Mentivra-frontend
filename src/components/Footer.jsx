@@ -47,18 +47,19 @@ export default function Footer() {
 
         {/* Bottom line */}
         <div className="mt-10 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
-          <p>
+          <p className="ml-1.5">
             © {new Date().getFullYear()} Mentivra. All rights reserved.
           </p>
-          <p className="mt-2 md:mt-0">
+          <p className="mt-2 md:mt-0 ">
             Built with focus, clarity, and care.
           </p>
           <p className="mt-2 md:mt-0">
             <a href="https://ankithazra.online">Website Develeoped and Maintained by Ankit Hazra</a>
           </p>
           <p className="mt-2 md:mt-0">
-            Brainchild of Pritam Ghosh (MBBS-NRS Medical College,Kolkata)
+            BrainChild of Pritam Ghosh (MBBS-NRS Medical College,Kolkata)
           </p>
+          
           
         </div>
       </div>
