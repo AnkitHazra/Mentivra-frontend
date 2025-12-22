@@ -53,6 +53,13 @@ export default function Footer() {
           <p className="mt-2 md:mt-0">
             Built with focus, clarity, and care.
           </p>
+          <p className="mt-2 md:mt-0">
+            <a href="https://ankithazra.online">Website Develeoped and Maintained by Ankit Hazra</a>
+          </p>
+          <p className="mt-2 md:mt-0">
+            Brainchild of Pritam Ghosh (MBBS-NRS Medical College,Kolkata)
+          </p>
+          
         </div>
       </div>
     </footer>
