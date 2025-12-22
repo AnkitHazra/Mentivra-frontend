@@ -4,3 +4,7 @@ body {
   background-color: #020617; /* deep navy */
   color: #e5e7eb; /* soft white */
 }
+/* index.css */
+html, body {
+  overflow-x: hidden;
+}
