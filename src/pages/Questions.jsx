@@ -8,6 +8,8 @@ export default function Questions() {
   const [page, setPage] = useState(1);
   const [pages, setPages] = useState(1);
   const [openSolution, setOpenSolution] = useState(null);
+  const [aiLoading, setAiLoading] = useState(null);
+  const [aiExplanation, setAiExplanation] = useState({});
 
   // to store selected options per question
   const [selectedAnswers, setSelectedAnswers] = useState({});
@@ -31,6 +33,38 @@ export default function Questions() {
     });
   }
 
+  async function askMentivraAI(question) {
+    setAiLoading(question._id);
+
+    try {
+      const res = await api.post("/ai/explain", {
+        questionText: question.questionText,
+        options: question.options,
+        correctAnswer: question.correctAnswer,
+        exam: "JEE / NEET",
+        subject: "Physics",
+        chapter: question.chapter?.name || "Unknown",
+      });
+     
+
+
+      setAiExplanation(prev => ({
+        ...prev,
+        [question._id]: res.data.explanation,
+      }));
+
+    } catch (err) {
+      setAiExplanation(prev => ({
+        ...prev,
+        [question._id]: "Mentivra AI could not generate an explanation right now.",
+      }));
+    }
+
+    setAiLoading(null);
+  }
+
+
+
   return (
     <div className="min-h-screen pt-32 px-6 relative overflow-hidden mb-10">
 
@@ -39,7 +73,7 @@ export default function Questions() {
       <div className="relative z-10 max-w-4xl mx-auto space-y-8">
 
         {questions.map((q, index) => {
-          
+
           const userAnswer = selectedAnswers[q._id];
 
           return (
@@ -102,31 +136,50 @@ export default function Questions() {
               {/* Show feedback */}
               {userAnswer && (
                 <p
-                  className={`text-sm mb-3 ${
-                    userAnswer.correct ? "text-green-400" : "text-red-400"
-                  }`}
+                  className={`text-sm mb-3 ${userAnswer.correct ? "text-green-400" : "text-red-400"
+                    }`}
                 >
                   {userAnswer.correct ? "Correct!" : "Wrong!"}
                 </p>
               )}
+              <div className="flex gap-4 mt-4">
+                <button
+                  onClick={() =>
+                    setOpenSolution(openSolution === q._id ? null : q._id)
+                  }
+                  className="text-sm text-indigo-400 hover:text-indigo-300"
+                >
+                  {openSolution === q._id ? "Hide Solution" : "View Solution"}
+                </button>
 
-              {/* Solution toggle */}
-              <button
-                onClick={() =>
-                  setOpenSolution(openSolution === q._id ? null : q._id)
-                }
-                className="text-sm text-indigo-400 hover:text-indigo-300"
-              >
-                {openSolution === q._id
-                  ? "Hide Solution"
-                  : "View Solution"}
-              </button>
+                <button
+                  onClick={() => askMentivraAI(q)}
+                  className="text-sm text-teal-400 hover:text-teal-300"
+                >
+                  Mentivra AI ✨
+                </button>
+              </div>
 
               {openSolution === q._id && (
                 <div className="mt-4 text-gray-300 text-sm leading-relaxed border-l-2 border-indigo-400 pl-4">
                   {q.solution}
                 </div>
               )}
+              {aiLoading === q._id && (
+                <div className="mt-4 text-sm text-gray-400">
+                  Mentivra AI is thinking…
+                </div>
+              )}
+
+              {aiExplanation[q._id] && (
+                <div className="mt-4 p-5 rounded-xl bg-white/5 border border-teal-400/30 text-gray-200 text-sm leading-7 whitespace-pre-line">
+                  <p className="text-teal-400 font-medium mb-2">
+                    Mentivra AI Explanation
+                  </p>
+                  {aiExplanation[q._id]}
+                </div>
+              )}
+
 
             </div>
           );
