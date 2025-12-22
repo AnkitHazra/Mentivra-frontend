@@ -227,7 +227,7 @@ export default function Landing() {
         </div>
       </div>
       {/* CONTACT SECTION */}
-      <div className="relative z-10 w-full mt-32 px-6 pb-32">
+      <div className="relative z-10 w-full mt-32 px-6 pb-32 " data-aos="zoom-in">
         <h2 className="text-4xl font-bold text-center text-white mb-12">
           Contact Us
         </h2>
