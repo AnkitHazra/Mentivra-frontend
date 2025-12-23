@@ -90,7 +90,7 @@ export default function Footer() {
           </p>
 
           <p>
-            Brainchild of Pritam Ghosh (MBBS, NRS Medical College, Kolkata)
+            Brainchild of Pritam Ghosh 
           </p>
         </div>
 

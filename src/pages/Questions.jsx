@@ -71,6 +71,15 @@ export default function Questions() {
     setAiLoading(null);
   }
 
+  useEffect(() => {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "instant",
+  });
+}, [page]);
+
+
   return (
     <div className="min-h-screen pt-32 px-6 relative overflow-hidden mb-10">
       <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-indigo-600/20 rounded-full blur-3xl" />

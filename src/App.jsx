@@ -3,6 +3,7 @@ import { AuthProvider } from "./auth/AuthContext";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 import Landing from "./pages/Landing";
 import Login from "./pages/Login";
@@ -18,6 +19,7 @@ export default function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
+      <ScrollToTop />
         <Navbar />
 
         <Routes>
