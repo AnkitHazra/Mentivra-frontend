@@ -169,6 +169,102 @@ export default function Landing() {
         </div>
       </div>
 
+      {/* MENTRAVI AI DESCRIPTION *  */}
+      <div
+        data-aos="fade-up"
+        data-aos-delay="200"
+        className="relative z-10 w-full mt-24 px-6"
+      >
+        <div className="max-w-5xl mx-auto bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-10 shadow-lg">
+
+          <h2 className="text-3xl md:text-4xl font-semibold text-white text-center mb-6">
+            Mentivra AI — Clarity When You Need It Most
+          </h2>
+
+          <p className="text-gray-300 text-center max-w-3xl mx-auto leading-relaxed mb-8">
+            Mentivra AI is designed to support focused learning — not replace thinking.
+            It helps students understand <span className="text-indigo-300">why an answer is correct</span>,
+            especially in concept-heavy chapters where clarity matters most.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-6 mt-10">
+
+            {/* Feature 1 */}
+            <div
+              data-aos="fade-up"
+              data-aos-delay="0"
+              className="
+      bg-white/5 border border-white/10 rounded-xl p-6 text-center
+      transition-all duration-300
+      hover:-translate-y-1
+      hover:border-indigo-400/60
+      hover:shadow-[0_0_20px_rgba(99,102,241,0.25)]
+    "
+            >
+              <h3 className="text-white font-medium mb-2">
+                Exam-Oriented Explanations
+              </h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Short, structured explanations aligned with JEE & NEET expectations —
+                no unnecessary theory, no distractions.
+              </p>
+            </div>
+
+            {/* Feature 2 */}
+            <div
+              data-aos="fade-up"
+              data-aos-delay="100"
+              className="
+      bg-white/5 border border-white/10 rounded-xl p-6 text-center
+      transition-all duration-300
+      hover:-translate-y-1
+      hover:border-indigo-400/60
+      hover:shadow-[0_0_20px_rgba(99,102,241,0.25)]
+    "
+            >
+              <h3 className="text-white font-medium mb-2">
+                Instant Concept Reinforcement
+              </h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Get immediate clarity after attempting a question, helping you
+                correct mistakes while the concept is still fresh.
+              </p>
+            </div>
+
+            {/* Feature 3 */}
+            <div
+              data-aos="fade-up"
+              data-aos-delay="200"
+              className="
+      bg-white/5 border border-white/10 rounded-xl p-6 text-center
+      transition-all duration-300
+      hover:-translate-y-1
+      hover:border-indigo-400/60
+      hover:shadow-[0_0_20px_rgba(99,102,241,0.25)]
+    "
+            >
+              <h3 className="text-white font-medium mb-2">
+                Guided by Real Aspirants
+              </h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Mentivra AI is shaped using patterns and approaches followed by
+                students who have successfully cleared national-level exams.
+              </p>
+            </div>
+
+          </div>
+
+
+          <p className="text-gray-400 text-center max-w-3xl mx-auto leading-relaxed mt-10">
+            Mentivra AI is not a shortcut. It is a support system — built to encourage
+            disciplined problem-solving, reinforce fundamentals, and build confidence
+            over long study sessions.
+          </p>
+
+        </div>
+      </div>
+
+
       {/* SUBJECT SHOWCASE */}
       <div className="relative z-10 w-full mt-32 px-6">
         <h2 className="text-4xl font-bold text-center text-white mb-12">
