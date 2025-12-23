@@ -107,7 +107,7 @@ export default function Landing() {
           <div className="flex flex-col md:flex-row justify-center gap-6 mb-12">
 
             <a
-              href="https://jeemain.nta.ac.in/"
+              href="https://jeemain.nta.nic.in/"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 rounded-md bg-indigo-600 hover:bg-indigo-500 transition text-white text-center min-w-[220px]"
