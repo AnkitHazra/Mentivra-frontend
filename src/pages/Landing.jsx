@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useContext } from "react";
+import { AuthContext } from "../auth/AuthContext";
 import ContactForm from "../components/ContactForm";
 
 export default function Landing() {
@@ -9,6 +11,10 @@ export default function Landing() {
   const toggleFAQ = (index) => {
     setOpenFAQ(openFAQ === index ? null : index);
   };
+
+  const { user } = useContext(AuthContext);
+
+  console.log(user)
 
   const FAQs = [
     {
@@ -55,22 +61,28 @@ export default function Landing() {
           Designed for serious aspirants and trusted by parents.
         </p>
 
-        <div data-aos="fade-up"
-          data-aos-delay="300" className="flex justify-center gap-4">
+        <div
+          data-aos="fade-up"
+          data-aos-delay="300"
+          className="flex justify-center gap-4">
           <Link
-            to="/signup"
+            to={user ? "/dashboard" : "/signup"}
             className="px-6 py-3 rounded-md bg-indigo-600 hover:bg-indigo-500 text-white transition text-lg"
           >
             Start Practicing
           </Link>
 
-          <Link
-            to="/login"
-            className="px-6 py-3 rounded-md border border-white/20 text-gray-200 hover:border-white/40 transition text-lg"
-          >
-            Login
-          </Link>
+          {!user && (
+            <Link
+              to="/login"
+              className="px-6 py-3 rounded-md border border-white/20 text-gray-200 hover:border-white/40 transition text-lg"
+            >
+              Login
+            </Link>
+          )}
         </div>
+
+
       </div>
 
       {/* PRODUCT DESCRIPTION & CREDIBILITY CARD */}

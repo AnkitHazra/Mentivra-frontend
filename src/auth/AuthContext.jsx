@@ -22,8 +22,10 @@ export function AuthProvider({ children }) {
         setUser(res.data); // 👈 ONLY USER OBJECT
       })
       .catch(() => {
-        localStorage.removeItem("token");
-        setUser(null);
+        if (err.response?.status === 401) {
+          localStorage.removeItem("token");
+          setUser(null);
+        }
       })
       .finally(() => {
         setLoading(false);
