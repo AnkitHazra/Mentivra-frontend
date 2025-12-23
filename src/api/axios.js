@@ -10,6 +10,7 @@ api.interceptors.request.use((req) => {
     req.headers.Authorization = `Bearer ${token}`;
   }
   return req;
+
 });
 
 export default api;
