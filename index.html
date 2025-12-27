@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <!-- ================= PRIMARY META TAGS ================= -->
     <title>Mentivra | Learn with clarity. Perform with confidence.</title>
 
@@ -23,7 +23,7 @@
     <!-- ================= CANONICAL ================= -->
     <link rel="canonical" href="https://www.mentivra.site/" />
 
-    <!-- ================= OPEN GRAPH (FACEBOOK / LINKEDIN) ================= -->
+    <!-- ================= OPEN GRAPH ================= -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.mentivra.site/" />
     <meta
@@ -59,7 +59,13 @@
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="manifest" href="/site.webmanifest" />
 
-    <!-- ================= STRUCTURED DATA (SCHEMA.ORG) ================= -->
+    <!-- ================= GOOGLE FONTS ================= -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ================= STRUCTURED DATA ================= -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -68,16 +74,9 @@
         "url": "https://www.mentivra.site",
         "logo": "https://www.mentivra.site/og-image.png",
         "description": "Mentivra is an online learning platform focused on structured JEE and NEET preparation through chapter-wise PYQs and AI-powered explanations.",
-        "sameAs": ["https://www.youtube.com/@Mentivra_edu"],
         "founder": [
-          {
-            "@type": "Person",
-            "name": "Ankit Hazra"
-          },
-          {
-            "@type": "Person",
-            "name": "Pritam Ghosh"
-          }
+          { "@type": "Person", "name": "Ankit Hazra" },
+          { "@type": "Person", "name": "Pritam Ghosh" }
         ],
         "educationalLevel": ["Class 11", "Class 12"],
         "teaches": [
@@ -90,26 +89,22 @@
         ]
       }
     </script>
-    <title>Mentivra</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <!-- Google tag (gtag.js) -->
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-B2Q3ZBMWVN"
-  ></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
 
-    gtag("config", "G-B2Q3ZBMWVN");
-  </script>
+    <!-- ================= GOOGLE ANALYTICS ================= -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-B2Q3ZBMWVN"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-B2Q3ZBMWVN");
+    </script>
+  </head>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
