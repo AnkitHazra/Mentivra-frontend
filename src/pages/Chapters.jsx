@@ -10,6 +10,7 @@ export default function Chapters() {
     api.get(`/chapters/${subjectId}`).then((res) => setChapters(res.data));
   }, [subjectId]);
 
+
   return (
     <div className="min-h-screen pt-32 px-6 relative overflow-hidden">
       {/* Glow */}
