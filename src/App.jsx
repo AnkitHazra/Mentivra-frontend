@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./auth/AuthContext";
+import "./App.css";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -15,7 +16,27 @@ import Questions from "./pages/Questions";
 import Bookmarks from "./pages/Bookmarks";
 import ProtectedRoute from "./auth/ProtectedRoute";
 
+const REVAMP_MODE = true;
+
 export default function App() {
+  if (REVAMP_MODE) {
+    return (
+      <main className="revamp-screen">
+        <div className="revamp-card">
+          <p className="revamp-badge">Mentivra Platform Update</p>
+          <h1>We are rebuilding this website</h1>
+          <p>
+            The frontend is temporarily blocked while we roll out a complete revamp
+            for a better learning experience.
+          </p>
+          <p className="revamp-meta">
+            Access will reopen once deployment is complete.
+          </p>
+        </div>
+      </main>
+    );
+  }
+
   return (
     <AuthProvider>
       <BrowserRouter>
